@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -210,5 +211,50 @@
       inputEl.value = ''
     })
   </script>
+=======
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Chat</title>
+</head>
+
+<body>
+    <div>
+        <div id="messages"></div>
+        <form id="form">
+            <input id="name" type="text" placeholder="Tu nombre" autocomplete="off" />
+            <input id="input" type="text" placeholder="Mensaje..." autocomplete="off" />
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <!-- Socket.io desde CDN -->
+    <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+
+    <script>
+        const socket = io("http://localhost:3000")
+        const input = document.getElementById('input')
+        const name = document.getElementById('name')
+        const messages = document.getElementById('messages')
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault()
+
+            if (input.value) {
+                socket.emit('message', {
+                    name: name.value || 'Anónimo',
+                    message: input.value
+                })
+                input.value = ''
+            }
+        })
+
+        socket.on('messages', (data) => {
+            console.log(data);
+            messages.innerHTML += `<p><b>${data.name}:</b> ${data.message}</p>`
+        })
+    </script>
+>>>>>>> 475c89df84bdaeb3c081ae2feda87c4348f6e4cc
 </body>
 </html>

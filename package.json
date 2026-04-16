@@ -1,18 +1,30 @@
 {
   "name": "backend-chat",
   "version": "1.0.0",
+<<<<<<< HEAD
   "description": "Backend del chat con Clean Architecture + MongoDB",
+=======
+  "description": "Backend del chat",
+>>>>>>> 475c89df84bdaeb3c081ae2feda87c4348f6e4cc
   "license": "ISC",
   "author": "",
   "type": "commonjs",
   "main": "server.js",
   "scripts": {
+<<<<<<< HEAD
     "start": "node server.js",
     "dev": "node --watch server.js"
   },
   "dependencies": {
     "express": "^5.2.1",
     "mongodb": "^6.15.0",
+=======
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+>>>>>>> 475c89df84bdaeb3c081ae2feda87c4348f6e4cc
     "socket.io": "^4.8.3"
   }
 }
